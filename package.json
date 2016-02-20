@@ -1,0 +1,18 @@
+{
+  "name": "freshiesorter",
+  "version": "1.0.0",
+  "description": "A program to sort freshmen specified in a spreadsheet to evenly distribute attributes in specified columns across a fixed number of houses",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "Yuan Yuchuan (yuchuan@u.nus.edu)",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "inquirer": "^0.12.0",
+    "random-js": "^1.0.8"
+  }
+}
