@@ -1,11 +1,14 @@
 var Random = require("random-js");
 var rn = require("random-name");
 var fs = require("fs")
+var XLSX = require("xlsx");
+var should = require("should");
 
 var Student = require("../Student.js");
 
-var rand = Random.engines.mt19937();
-rand.seed(123);
+var mt = Random.engines.mt19937();
+mt.seed(123);
+var numStudents = 180;
 
 describe("Generating Test Data", function(){
     var names = [];
@@ -18,8 +21,8 @@ describe("Generating Test Data", function(){
         }
         names = Array.from(set.values());
     });
+
     it("Should list majors and genders", function(){
-        
         var distributions = XLSX.readFile("tests/studentRatio.xlsx");
         var worksheet = distributions.Sheets[distributions.SheetNames];
         var mi = 0;
@@ -52,7 +55,7 @@ describe("Generating Test Data", function(){
 
 function generateRandomName(){
     string = rn.first();
-    while((Random.bool())(rand)){
+    while((Random.bool())(mt)){
         string += " " + rn.middle();
     }
     string += " " + rn.last();
