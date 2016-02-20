@@ -33,18 +33,48 @@ describe("Sorting Students", function(done){
             , ["Major", "Gender"]
             , 123);
     });
-    it("Should have roughly the same number of people per house", function(){
-        var min = sorting[0].members.length;
-        var max = sorting[0].members.length;
-        sorting.forEach(function(house){
-            min = Math.min(min, house.members.length);
-            max = Math.max(max, house.members.length);
-            total += house.members.length;
+    describe("Every House", function(){
+        it("Should have roughly the same number of people", function(){
+            var min = sorting[0].members.length;
+            var max = sorting[0].members.length;
+            sorting.forEach(function(house){
+                min = Math.min(min, house.members.length);
+                max = Math.max(max, house.members.length);
+                total += house.members.length;
+            });
+            (max - min).should.be.belowOrEqual(10);
         });
-        (max - min).should.be.belowOrEqual(10);
-    });
-    it("Should have the same number of students", function(){
-        total.should.equal(students.length);
+        it("Should have the same number of students", function(){
+            total.should.equal(students.length);
+        });
+        it("Should have a balanced gender ratio", function(done){
+            var total_m = 0;
+            var total_f = 0;
+            var gender_ratios = sorting.map(function(house){
+                var m = 0;
+                var f = 0;
+                house.members.forEach(function(student){
+                    if(student.chars.Gender == "M"){
+                        m++;
+                    } else if(student.chars.Gender == "F") {
+                        f++;
+                    }
+                });
+                total_m += m;
+                total_f += f;
+                return m / f;
+            });
+            var overall_ratio = total_m / total_f;
+            console.log(total_m, total_f);
+            gender_ratios.forEach(function(ratio){
+                ratio.should.be.belowOrEqual(overall_ratio + 0.1);
+                ratio.should.be.aboveOrEqual(overall_ratio - 0.1);
+            });
+            done();
+        });
+        it("Should have the same number of students", function(){
+            total.should.equal(students.length);
+        });
     });
     it("Should write the results to a file", function(){
         fs.open("tests/results.csv", "w+", function(err, file){
@@ -52,7 +82,6 @@ describe("Sorting Students", function(done){
                 strAry = house.members.map(function(student){
                     return `${house.name},${student.name},${student.chars.Major},${student.chars.Gender}`;
                 });
-                strAry.unshift(house.name);
                 return strAry.join("\n");
             });
             names = names.join("\n");
