@@ -9,7 +9,8 @@
   "author": "Yuan Yuchuan (yuchuan@u.nus.edu)",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "random-name": "^0.1.1"
   },
   "dependencies": {
     "inquirer": "^0.12.0",
