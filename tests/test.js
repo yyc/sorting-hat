@@ -25,13 +25,14 @@ describe("Reading Files", function(){
         done();
     });
 });
-describe("Sorting Students", function(done){
+describe("House Sorting", function(done){
     var sorting;
     var total = 0;
-    it("Sorting", function(){
+    it("should work", function(){
         sorting = sorter.sort(students
             , ["Ursaia", "Nocturna", "Ianthe", "Triton", "Ankaa", "Saren"]
-            , ["Major", "Gender"]
+//            , ["Major", "Gender"]
+            , ["Gender", "Major"]
             , 123);
     });
     describe("Every House", function(){
@@ -80,8 +81,8 @@ describe("Sorting Students", function(done){
     });
     it("Should write the results to a file", function(){
         fs.open("tests/results.csv", "w+", function(err, file){
-            names = sorting.map(function(house, index){
-                strAry = house.members.map(function(student){
+            var names = sorting.map(function(house, index){
+                var strAry = house.members.map(function(student){
                     return `${house.name},${student.name},${student.chars.Major},${student.chars.Gender}`;
                 });
                 return strAry.join("\n");
@@ -92,7 +93,7 @@ describe("Sorting Students", function(done){
     });
 });
 describe("Mergesort", function(){
-    it("should sort correctly", function(){
+    it("should sort numbers correctly", function(){
         var ary = (Random.dice(20, 20))(mt);
         sorter.mergeSort(ary);
         for(let i = 1; i < ary.length; i++){
@@ -101,10 +102,9 @@ describe("Mergesort", function(){
     });
     var ary;
     var studentArray;
-    it("should sort correctly", function(){
+    it("should sort students correctly", function(){
         ary = (Random.dice(20, 20))(mt);
         var i = 0;
-        console.log(ary);
         studentArray = ary.map(function(val){
             return new Student("a", {
                 order: val,
@@ -112,12 +112,11 @@ describe("Mergesort", function(){
                 });
         });
         sorter.mergeSort(studentArray, Student.sortFunction(["order"]));
-        console.log(studentArray);
         for(let i = 1; i < studentArray.length; i++){
             studentArray[i].chars.order.should.be.aboveOrEqual(studentArray[i -1].chars.order);
         }
     });
-    it("should sort stably", function(){
+    it("should sort students stably", function(){
         for(let i = 1; i < studentArray.length; i++){
             if(studentArray[i].chars.order == studentArray[i - 1].chars.order){
                 studentArray[i].chars.hidden.should.be.aboveOrEqual(studentArray[i].chars.hidden);

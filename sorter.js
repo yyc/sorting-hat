@@ -31,7 +31,7 @@ function sort(studentArray, houseNames, sortOrders, randomSeed){
             categories[cat] = (Random.integer(0, numHouses - 1))(mt);
         }
     }
-    studentArray.sort(Student.sortFunction(sortOrders));
+    mergeSort(studentArray, Student.sortFunction(sortOrders));
     for(i = 0; i < studentArray.length; i++){
         let cat = studentArray[i].chars[sortOrders[0]];
         houses[categories[cat]].members.push(studentArray[i]);
@@ -39,6 +39,14 @@ function sort(studentArray, houseNames, sortOrders, randomSeed){
     }
     return houses;
 }
+
+
+/*  Implemetation of Stable Mergesort
+    @param {Array} ary - The array of items to sort
+    @param {Array} compareOption - (Optional) The compare 
+    
+    
+    */
 
 // Enable optional parameters when Node supports it
 //function mergeSort(ary, compareFunction=function(a, b){ return a - b;}, start = 0, end = -1, ary2 = []){
