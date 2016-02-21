@@ -1,3 +1,4 @@
+"use strict";
 var Random = require("random-js");
 var rn = require("random-name");
 var XLSX = require("xlsx");
@@ -62,13 +63,14 @@ describe("Sorting Students", function(done){
                 });
                 total_m += m;
                 total_f += f;
+                console.log(house.name, m / f);
                 return m / f;
             });
             var overall_ratio = total_m / total_f;
             console.log(total_m, total_f);
             gender_ratios.forEach(function(ratio){
-                ratio.should.be.belowOrEqual(overall_ratio + 0.1);
-                ratio.should.be.aboveOrEqual(overall_ratio - 0.1);
+                ratio.should.be.belowOrEqual(overall_ratio + 0.15);
+                ratio.should.be.aboveOrEqual(overall_ratio - 0.15);
             });
             done();
         });
@@ -88,6 +90,41 @@ describe("Sorting Students", function(done){
             fs.write(file, names, 0, 0, done);
         });
     });
+});
+describe("Mergesort", function(){
+    it("should sort correctly", function(){
+        var ary = (Random.dice(20, 20))(mt);
+        sorter.mergeSort(ary);
+        for(let i = 1; i < ary.length; i++){
+            ary[i].should.be.aboveOrEqual(ary[i - 1]);
+        }
+    });
+    var ary;
+    var studentArray;
+    it("should sort correctly", function(){
+        ary = (Random.dice(20, 20))(mt);
+        var i = 0;
+        console.log(ary);
+        studentArray = ary.map(function(val){
+            return new Student("a", {
+                order: val,
+                hidden: i++
+                });
+        });
+        sorter.mergeSort(studentArray, Student.sortFunction(["order"]));
+        console.log(studentArray);
+        for(let i = 1; i < studentArray.length; i++){
+            studentArray[i].chars.order.should.be.aboveOrEqual(studentArray[i -1].chars.order);
+        }
+    });
+    it("should sort stably", function(){
+        for(let i = 1; i < studentArray.length; i++){
+            if(studentArray[i].chars.order == studentArray[i - 1].chars.order){
+                studentArray[i].chars.hidden.should.be.aboveOrEqual(studentArray[i].chars.hidden);
+            }
+        }
+        
+    })
 });
 
 
