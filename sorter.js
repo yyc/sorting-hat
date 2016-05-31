@@ -6,7 +6,7 @@ var Student = require("./Student.js");
 var mt = Random.engines.mt19937();
 
 /**
-   * Sorts an array of Student objects 
+   * Sorts an array of Student objects
    * @param {Array} studentArray - The array of Student objects
    * @param {Array} houseNames - The array of House Names
    * @param {Array} sortOrders - The properties to sort by, in order of priority
@@ -16,54 +16,54 @@ function sort(studentArray, houseNames, sortOrders, randomSeed){
     var numHouses = houseNames.length;
     var houses = Array(numHouses);
     var categories = {};
+    var randomHouse = Random.integer(0, numHouses - 1);
 
     mt.seed(randomSeed);
     Random.shuffle(mt, houseNames);
+    //Randomize house names
     for(var i = 0; i < numHouses; i++){
         houses[i] = {
             name: houseNames[i],
             members: []
         };
     }
+    //populate each categories entry with a starting house
     for(var i = 0; i < studentArray.length; i++){
-        let cat = categories;
-        for(j = 0; j < sortOrders.length - 1; j++){
+        for(var j = 0; j < sortOrders.length; j++){
             let prop = studentArray[i].chars[sortOrders[j]];
-            if(cat[prop] == undefined){
-                cat[prop] = {};
+            if(categories[prop] == undefined){
+                categories[prop] = randomHouse(mt);
             }
         }
-        let prop = studentArray[i].chars[sortOrders[studentArray.length - 1]];
-        if(cat[prop] == undefined){
-            categories[cat] = (Random.integer(0, numHouses - 1))(mt);
-        }
-
     }
+
+    //Reseed, so additional categories don't affect later sorting
+    mt.seed(randomSeed)
     mergeSort(studentArray, Student.sortFunction(sortOrders));
     for(i = 0; i < studentArray.length; i++){
-        for(j = 0; j < sortOrders.length - 1; j++){
-            let prop = studentArray[i].chars[sortOrders[j]];
-            if(cat[prop] == undefined){
-                cat[prop] = {};
-            }
-        }
         let prop = studentArray[i].chars[sortOrders[studentArray.length - 1]];
-        if(cat[prop] == undefined){
-            categories[cat] = (Random.integer(0, numHouses - 1))(mt);
+        if(categories[prop] == undefined){
+            categories[prop] = randomHouse(mt);
         }
-        let cat = studentArray[i].chars[sortOrders[0]];
+//        console.log(categories)
+        var cat = studentArray[i].chars[sortOrders[0]];
+  //      console.log(cat)
         houses[categories[cat]].members.push(studentArray[i]);
         categories[cat] = (categories[cat] + 1) % numHouses;
     }
     return houses;
 }
 
+function findNext(categories, sortOrders, chars){
+  
+
+}
 
 /*  Implemetation of Stable Mergesort
     @param {Array} ary - The array of items to sort
-    @param {Array} compareOption - (Optional) The compare 
-    
-    
+    @param {Array} compareOption - (Optional) The compare
+
+
     */
 
 // Enable optional parameters when Node supports it

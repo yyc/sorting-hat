@@ -18,7 +18,7 @@ describe("Reading Files", function(){
         students = students.map(function(str){
             var studentData = str.split(";");
             var student = new Student(studentData[0], {
-                Major: studentData[1], 
+                Major: studentData[1],
                 Gender: studentData[2]});
             return student;
         });
@@ -31,8 +31,8 @@ describe("House Sorting", function(done){
     it("should work", function(){
         sorting = sorter.sort(students
             , ["Ursaia", "Nocturna", "Ianthe", "Triton", "Ankaa", "Saren"]
-//            , ["Major", "Gender"]
-            , ["Gender", "Major"]
+            , ["Major", "Gender"]
+//            , ["Gender", "Major"]
             , 123);
     });
     describe("Every House", function(){
@@ -122,7 +122,7 @@ describe("Mergesort", function(){
                 studentArray[i].chars.hidden.should.be.aboveOrEqual(studentArray[i].chars.hidden);
             }
         }
-        
+
     })
 });
 
@@ -134,5 +134,5 @@ function generateRandomName(){
     }
     string += " " + rn.last();
     return string;
-   
+
 }
