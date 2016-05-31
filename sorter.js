@@ -26,13 +26,31 @@ function sort(studentArray, houseNames, sortOrders, randomSeed){
         };
     }
     for(var i = 0; i < studentArray.length; i++){
-        let cat = studentArray[i].chars[sortOrders[0]];
-        if(categories[cat] == undefined){
+        let cat = categories;
+        for(j = 0; j < sortOrders.length - 1; j++){
+            let prop = studentArray[i].chars[sortOrders[j]];
+            if(cat[prop] == undefined){
+                cat[prop] = {};
+            }
+        }
+        let prop = studentArray[i].chars[sortOrders[studentArray.length - 1]];
+        if(cat[prop] == undefined){
             categories[cat] = (Random.integer(0, numHouses - 1))(mt);
         }
+
     }
     mergeSort(studentArray, Student.sortFunction(sortOrders));
     for(i = 0; i < studentArray.length; i++){
+        for(j = 0; j < sortOrders.length - 1; j++){
+            let prop = studentArray[i].chars[sortOrders[j]];
+            if(cat[prop] == undefined){
+                cat[prop] = {};
+            }
+        }
+        let prop = studentArray[i].chars[sortOrders[studentArray.length - 1]];
+        if(cat[prop] == undefined){
+            categories[cat] = (Random.integer(0, numHouses - 1))(mt);
+        }
         let cat = studentArray[i].chars[sortOrders[0]];
         houses[categories[cat]].members.push(studentArray[i]);
         categories[cat] = (categories[cat] + 1) % numHouses;
