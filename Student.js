@@ -17,3 +17,4 @@ Student.sortFunction = function(attr){
         return 0;
     }
 }
+Student.prototype.getW

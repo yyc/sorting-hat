@@ -24,6 +24,10 @@ RankedCollection.prototype.getRank = function(name){
       return i;
     }
   }
+  return this.list.push({
+    name: name,
+    value: 0
+  }) - 1; // New index, which is at the end
 }
 
 function listSort(list){
