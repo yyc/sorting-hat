@@ -55,8 +55,21 @@ function sort(studentArray, houseNames, sortOrders, randomSeed){
 }
 
 function findNext(categories, sortOrders, chars){
-  
+    if(sortOrders.length == 1){
+      return categories[chars[sortOrder[0]]]
+    } else{
+      return findNext(categories[chars[sortOrder[0]]], sortOrder.slice(1), chars)
+    }
+}
+//Recursively set the empty space (lazily evaluated)
+function setNext(categories, sortOrders, chars, val_fn){
+  if(sortOrders.length == 1){
+    if(categories[chars[sortOrder[0]]] == undefined){
 
+    }
+  } else{
+    return findNext(categories[chars[sortOrder[0]]], sortOrder.slice(1), chars)
+  }
 }
 
 /*  Implemetation of Stable Mergesort
