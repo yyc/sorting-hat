@@ -37,15 +37,15 @@ function sort(studentArray, houseNames, sortOrders, randomSeed, existingSort){
     mergeSort(studentArray, Student.sortFunction(sortOrders));
 
     var houseIndex = 0;
+
     // Iterate until all students are sorted
     while(studentArray.length > 0){
       let houseName = houseNames[houseIndex];
       let student = extractMax(table, studentArray, houseName);
-
-
+      existingSort[houseName].push(student);
+      table.addPerson(houseName, student);
       houseIndex = (houseIndex + 1) % numHouses;
     }
-
     return houses;
 }
 
