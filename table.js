@@ -1,7 +1,7 @@
 var RankedCollection = require("./rankedcollection.js");
 
 /*
-  A table keeps track of the rank of each house in in the number of students with a particular attribute
+  A table keeps track of the rank of each house in in the n
 */
 function Table(attributes){
   this.attributes = attributes;
@@ -18,7 +18,7 @@ Table.prototype.addHouse = function(houseName, studentArray){
 }
 Table.prototype.addPerson = function(houseName, student){
   for(var i = 0; i < this.attributes.length; i++){
-    attr = this.attrbutes[i];
+    attr = this.attributes[i];
     if(this.table[attr][student.chars[attr]] == undefined){
       this.table[attr][student.chars[attr]] = new RankedCollection();
     }
@@ -28,7 +28,7 @@ Table.prototype.addPerson = function(houseName, student){
 Table.prototype.getRank = function(houseName, student){
   var rank = 0;
   for(var i = 0; i < this.attributes.length; i++){
-    attr = this.attrbutes[i];
+    attr = this.attributes[i];
     if(this.table[attr][student.chars[attr]] == undefined){
       this.table[attr][student.chars[attr]] = new RankedCollection();
     }

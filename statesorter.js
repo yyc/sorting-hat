@@ -4,6 +4,8 @@ var Random = require("random-js");
 var Student = require("./Student.js");
 var Table = require("./table.js");
 
+var mt = Random.engines.mt19937();
+
 /**
    * Sorts an array of Student objects
    * @param {Array} studentArray - The array of Student objects
@@ -44,9 +46,10 @@ function sort(studentArray, houseNames, sortOrders, randomSeed, existingSort){
       let student = extractMax(table, studentArray, houseName);
       existingSort[houseName].push(student);
       table.addPerson(houseName, student);
+      student.chars['House'] = houseName;
       houseIndex = (houseIndex + 1) % numHouses;
     }
-    return houses;
+    return existingSort;
 }
 
 // Extracts and returns the student in studentArray with the greatest table
@@ -64,7 +67,10 @@ function extractMax(table, studentArray, houseName){
       currentRank = newRank;
     }
   }
-  return studentArray.pop();
+  let student = studentArray.pop();
+  console.log(table);
+  console.log(student);
+  return student;
 }
 
 
