@@ -68,8 +68,6 @@ function extractMax(table, studentArray, houseName){
     }
   }
   let student = studentArray.pop();
-  console.log(table);
-  console.log(student);
   return student;
 }
 
