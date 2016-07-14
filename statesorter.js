@@ -34,6 +34,7 @@ function sort(studentArray, houseNames, sortOrders, randomSeed, existingSort){
         existingSort[houseName] = [];
       }
     });
+    houseNames.sort(function(a,b){return existingSort[a].length - existingSort[b].length;})
     //Reseed, so additional categories don't affect later sorting
     mt.seed(randomSeed)
     mergeSort(studentArray, Student.sortFunction(sortOrders));
