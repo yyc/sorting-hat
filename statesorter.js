@@ -58,6 +58,7 @@ function sort(studentArray, houseNames, sortOrders, randomSeed, existingSort){
 function extractMax(table, studentArray, houseName){
   var currentRank = table.getRank(houseName, studentArray[0]);
   var newRank = 0;
+  // the highest rank "bubbles" to the end of the array
   for(var i = 0; i < studentArray.length - 1; i++){
     newRank = table.getRank(houseName, studentArray[i + 1]);
     if(currentRank > newRank){
