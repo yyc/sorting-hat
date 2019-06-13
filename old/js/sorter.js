@@ -1,9 +1,9 @@
 "use strict";
-var Random = require("random-js");
+const Random = require("random-js");
 
-var Student = require("./Student.js");
+const Student = require("./Student.js");
 
-var mt = Random.engines.mt19937();
+const mt = Random.engines.mt19937();
 
 /**
    * Sorts an array of Student objects
@@ -11,8 +11,10 @@ var mt = Random.engines.mt19937();
    * @param {Array} houseNames - The array of House Names
    * @param {Array} sortOrders - The properties to sort by, in order of priority
    * @param {integer} randomSeed - The random seed to be provided for the random number generator
+   * @param {Object} options - An optional dict that can containthe following:
+   *        {integer} round - the current round of sorting (If rounds are used)
     */
-function sort(studentArray, houseNames, sortOrders, randomSeed){
+function sort(studentArray, houseNames, sortOrders, randomSeed, options){
     var numHouses = houseNames.length;
     var houses = Array(numHouses);
     var categories = {};
@@ -80,10 +82,10 @@ function setNext(categories, sortOrders, chars, val_fn){
     */
 
 // Enable optional parameters when Node supports it
-//function mergeSort(ary, compareFunction=function(a, b){ return a - b;}, start = 0, end = -1, ary2 = []){
-function mergeSort(ary, compareFunction, start, end, ary2){
+//function mergeSort(ary, comparator=function(a, b){ return a - b;}, start = 0, end = -1, ary2 = []){
+function mergeSort(ary, comparator, start, end, ary2){
     //For now, implement optional parameters manually
-    compareFunction = compareFunction || function(a, b){ return a - b;};
+    comparator = comparator || function(a, b){ return a - b;};
     start = start || 0;
     if(end == undefined || end == -1){
         end = ary.length - 1;
@@ -98,8 +100,8 @@ function mergeSort(ary, compareFunction, start, end, ary2){
         for(let i = start; i <= end; i++){
             ary2[i] = ary[i];
         }
-        mergeSort(ary2, compareFunction, start, mid, ary);
-        mergeSort(ary2, compareFunction, mid + 1, end, ary);
+        mergeSort(ary2, comparator, start, mid, ary);
+        mergeSort(ary2, comparator, mid + 1, end, ary);
         let i = start;
         let left = start;
         let right = mid + 1;
@@ -109,7 +111,7 @@ function mergeSort(ary, compareFunction, start, end, ary2){
             } else if(right > end){
                 ary[i++] = ary2[left++];
             }
-            else if(compareFunction(ary2[left], ary2[right]) <= 0){
+            else if(comparator(ary2[left], ary2[right]) <= 0){
                 ary[i++] = ary2[left++];
             } else{
                 ary[i++] = ary2[right++];
