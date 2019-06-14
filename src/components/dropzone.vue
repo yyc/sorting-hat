@@ -5,9 +5,25 @@
     @dragover.prevent
     @dragover="isHover = true"
     @dragleave="isHover = false"
+    @dragend="isHover = false"
     @drop="handleDrop"
   >
-    Drop a spreadsheet file here (.xls, .xlsx, .csv or .tsv)
+    <p v-if="sheets.length == 0">
+      Drop a spreadsheet file here (.xls, .xlsx, .csv or .tsv)
+    </p>
+    <div v-if="sheets.length > 0">
+      Your spreadsheet contains multiple sheets. Please select the sheet with
+      the required details:
+      <ul>
+        <li
+          v-for="sheet in sheets"
+          v-bind:key="sheet.name"
+          v-on:click="sheetSelect(sheet.table)"
+        >
+          {{ sheet.name }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
@@ -16,6 +32,7 @@ import XLSX from "xlsx";
 function handleDrop(e) {
   e.stopPropagation();
   e.preventDefault();
+  this.isHover = false;
   let self = this;
   let files = e.dataTransfer.files;
   let f = files[0];
@@ -23,15 +40,27 @@ function handleDrop(e) {
   reader.onload = function(e) {
     var data = new Uint8Array(e.target.result);
     var workbook = XLSX.read(data, { type: "array" });
-    self.$emit("receivedTable", workbook);
+
+    if (workbook.SheetNames.length == 1) {
+      self.$emit("receivedTable", workbook.Sheets[workbook.SheetNames[0]]);
+      return;
+    }
+    self.sheets = workbook.SheetNames.map(sheetName => ({
+      name: sheetName,
+      table: workbook.Sheets[sheetName]
+    }));
   };
   reader.readAsArrayBuffer(f);
 }
 
+function sheetSelect(sheet) {
+  this.$emit("receivedTable", sheet);
+}
+
 export default {
   name: "Dropzone",
-  data: () => ({ isHover: false }),
-  methods: { handleDrop }
+  data: () => ({ isHover: false, sheets: [] }),
+  methods: { handleDrop, sheetSelect }
 };
 </script>
 <style>

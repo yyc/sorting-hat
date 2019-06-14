@@ -7,7 +7,7 @@
 <script>
 import Dropzone from "./components/Dropzone";
 
-function handleTable(tableData) {
+function handleTable(tableData, options = {}) {
   this.table = tableData;
   console.log(this.table);
 }
