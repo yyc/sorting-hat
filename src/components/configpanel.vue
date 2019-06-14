@@ -1,6 +1,6 @@
 <template>
   <div class="configpanel">
-    Sorting Configuration:
+    <h3>Sorting Configuration</h3>
     <br />
 
     <input type="checkbox" id="show-sorting" v-model="config.showSortingOnly" />
