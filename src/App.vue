@@ -2,7 +2,23 @@
   <div id="app">
     <dropzone v-if="table == false" @receivedTable="handleTable"></dropzone>
     <div v-if="table !== false">
-      <div id="previewtable" v-html="previewTable"></div>
+      <div id="previewtable">
+        <table>
+          <tr>
+            <th v-for="header in previewHeaders" v-bind:key="header">
+              {{ header }}
+            </th>
+          </tr>
+          <tr v-for="row in previewTable" v-bind:key="row.vueindex">
+            <td
+              v-for="header in previewHeaders"
+              v-bind:key="row.vueindex + header"
+            >
+              {{ row[header] }}
+            </td>
+          </tr>
+        </table>
+      </div>
       <configpanel
         v-bind:config="config"
         v-bind:headers="headers"
@@ -25,11 +41,17 @@ function handleTable(tableData, options = {}) {
   this.headers = getHeaders(tableData);
 }
 
-function previewTable() {
+function previewHeaders() {
   if (this.config.showSortingOnly == false) {
-    return XLSX.utils.sheet_to_html(this.table);
+    return getHeaders(this.table);
   } else {
+    return this.config.priority;
   }
+}
+
+function previewTable() {
+  let json_table = XLSX.utils.sheet_to_json(this.table);
+  return json_table.map((x, i) => ({ ...x, vueindex: i }));
 }
 
 function handleSort() {}
@@ -54,6 +76,7 @@ export default {
     handleSort
   },
   computed: {
+    previewHeaders,
     previewTable
   }
 };
