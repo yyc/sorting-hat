@@ -11,6 +11,7 @@
       <li v-for="header in headers" v-bind:key="header">{{ header }}</li>
     </ul>
     <!-- <configjson v-bind:config="config"></configjson> -->
+    <button v-on:click="$emit('triggersort')">Sort</button>
   </div>
 </template>
 

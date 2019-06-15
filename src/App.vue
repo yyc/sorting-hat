@@ -35,26 +35,29 @@ import Configpanel from "./components/configpanel";
 import XLSX from "xlsx";
 
 import { getHeaders } from "./sheetutils";
+import sort from "./sorting";
 
 function handleTable(tableData, options = {}) {
-  this.table = tableData;
-  this.headers = getHeaders(tableData);
+  let table = XLSX.utils.sheet_to_json(tableData);
+  this.headers = getHeaders(table);
+  this.table = _.map(table, x => ({ ...x, Sorting: undefined }));
 }
 
 function previewHeaders() {
   if (this.config.showSortingOnly == false) {
-    return getHeaders(this.table);
+    return this.headers.concat("Sorting");
   } else {
-    return this.config.priority;
+    return [...this.config.priority, "Sorting"];
   }
 }
 
 function previewTable() {
-  let json_table = XLSX.utils.sheet_to_json(this.table);
-  return json_table.map((x, i) => ({ ...x, vueindex: i }));
+  return this.table.map((x, i) => ({ ...x, vueindex: i }));
 }
 
-function handleSort() {}
+function handleSort() {
+  this.table = sort(this.table, this.config);
+}
 
 export default {
   name: "App",
@@ -67,7 +70,8 @@ export default {
     config: {
       showSortingOnly: false,
       priority: ["Gender", "Faculty"],
-      seed: "asdf"
+      seed: "asdf",
+      houses: ["Green", "Black", "Purple", "Blue", "Red", "Orange"]
     },
     headers: []
   }),
