@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <dropzone v-if="table == undefined" @receivedTable="handleTable"></dropzone>
-    <div v-if="table !== undefined">
+    <dropzone v-if="table == false" @receivedTable="handleTable"></dropzone>
+    <div v-if="table !== false">
       <div id="previewtable" v-html="previewTable"></div>
-      <configpanel v-bind:config="config"></configpanel>
+      <configpanel
+        v-bind:config="config"
+        v-bind:headers="headers"
+        @triggersort="handleSort"
+      ></configpanel>
     </div>
   </div>
 </template>
@@ -14,9 +18,11 @@ import Configpanel from "./components/configpanel";
 
 import XLSX from "xlsx";
 
+import { getHeaders } from "./sheetutils";
+
 function handleTable(tableData, options = {}) {
   this.table = tableData;
-  console.log(this.table);
+  this.headers = getHeaders(tableData);
 }
 
 function previewTable() {
@@ -26,6 +32,8 @@ function previewTable() {
   }
 }
 
+function handleSort() {}
+
 export default {
   name: "App",
   components: {
@@ -33,13 +41,17 @@ export default {
     Configpanel
   },
   data: () => ({
-    table: undefined,
+    table: false,
     config: {
-      showSortingOnly: false
-    }
+      showSortingOnly: false,
+      priority: ["Gender", "Faculty"],
+      seed: "asdf"
+    },
+    headers: []
   }),
   methods: {
-    handleTable
+    handleTable,
+    handleSort
   },
   computed: {
     previewTable

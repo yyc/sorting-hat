@@ -6,6 +6,10 @@
     <input type="checkbox" id="show-sorting" v-model="config.showSortingOnly" />
     <label for="show-sorting"> Show Sorting Columns Only</label>
     <br />
+    Headers:
+    <ul>
+      <li v-for="header in headers" v-bind:key="header">{{ header }}</li>
+    </ul>
     <!-- <configjson v-bind:config="config"></configjson> -->
   </div>
 </template>
@@ -23,6 +27,10 @@ export default {
   props: {
     config: {
       type: Object,
+      required: true
+    },
+    headers: {
+      type: Array,
       required: true
     }
   },
