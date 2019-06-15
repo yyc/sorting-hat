@@ -1,0 +1,180 @@
+Tammy Weirick;Computer Science;M
+Kare Bartram Janaya;Business;F
+Hyacinthe Isolt;History;F
+Sindee Ludwig;Life Sciences;F
+Tani Heidt;Psychology;F
+Hattie Bum;Law;M
+Dora Abramo Kellen Alaric;Japanese Stuidies;M
+Glen Timotheus Otis Hortense;Political Science;M
+Appolonia Radcliffe Whorton;Life Sciences;M
+Tracee Graig Norvall;Architecture;M
+Fayette Onfroi Vladamir Lohner;Theatre;F
+Kesley Hamil;Industrial Design;M
+Susi Rance;Industrial and Systems Engineering;M
+Marcie Chandler Dilan Selig Clary;Global studies;F
+Nicola Hastings Tessi;Life Sciences;M
+Nathalie Hughmanick;Communications and New Media;F
+Mable Cyd;Law;M
+Brana Atwekk;Pharmacy;M
+Tildy Tuck Salvatore Isaiah Johst;Life Sciences;F
+Orly Guimond;Chinese Language;F
+Germana Alfie Christiano;Business;M
+Stephenie Materse;Pharmacy;F
+Jeni Denver Brita;Business;F
+Theadora Nehemiah Melantha;Information Systems;M
+Addi Bevan Zach Xever Laroy;Japanese Stuidies;F
+Bonnibelle Hamforrd;Pharmacy;M
+Roseline Alleyn;Japanese Stuidies;M
+Ella Leong;Life Sciences;F
+Laural Meier Joshua Elurd;Business;M
+Corilla Nievelt;Computer Science;M
+Francene Hamil Perrine;Chemistry;M
+Binny Lamont Liz;Life Sciences;M
+Darcie Boru;Psychology;F
+Adda Harwilll Joye;Law;M
+Ambur Bar Kilmarx;Physics;F
+Cindelyn Claudius Gasper;Information Systems;F
+Binny Blanchard;Chem Engineering;F
+Mella Stockmon;Business;F
+Dosi Bick;Business;F
+Ann Peter Buyer;Economics;M
+Belinda Painter;Law;F
+Amelita Massimiliano Claiborn Hillier Fraser Kassel;Computer Enginering;F
+Vere Sapowith;Communications and New Media;F
+Mirabella Danyette;Business;M
+Kalli Pryce;Statistics;F
+Cissy Douglass Lannie Benji;Political Science;F
+Alessandra Berky;Industrial and Systems Engineering;M
+Janot Fujio;Sociology;F
+Erena Papke;Chemistry;F
+Jenni Arlan Caro;Pharmacy;F
+Etta Ruttger Noam McGraw;Mechanical Engineering;F
+Milissent Huberto Fabien Adamo Garibold;Law;F
+Roz Fidole Dominik Weber Mortimer;Economics;F
+Yevette Sammie;Psychology;M
+Nicolea Roshan;Psychology;M
+Roana Berke Amii;Chemistry;M
+Kameko Nina;Business Analytics;M
+Fifine Marven Cobbie Teddy Maggee;Geography;F
+Yolane Hoebart Constantino Antoni;Political Science;M
+Lilah Salangia;Business;M
+Ellen Tedman Mathias Arvid;Physics;M
+Emmalynne Grannie Hagan Thaine Tadeas Marlowe Ellsworth Cyril Bonny;Geography;M
+Dierdre Salvador Farly Silas Izak Castle;Physics;M
+Adrianna Seibold;Chemistry;F
+Arlen Jarrow;Mechanical Engineering;M
+Annabal Mortimer Lovell Ryle;Law;M
+Daria Howzell;Psychology;F
+Liva Bernard Gilburt McQuoid;Law;F
+Jacquelin Oriole;Physics;M
+Dorothy Samuella;Business;F
+Gwynne Patty Lawson;Math;M
+Laurella Mart Rainer Sibley;Psychology;F
+Danit Robbin;Business;M
+Mersey Garold Melda;Law;M
+Koralle Baron Dougie Moshe Granny Austina;Statistics;M
+Fredra Patrizius Barvick;Psychology;F
+Nancee Nester Duhl;Law;F
+Marietta Cerallua;Economics;F
+Wynne Franklin Jessie Horatius;Political Science;F
+Terrijo Yorgo Yuma Wye Phelgen;Architecture;M
+Abigale Garik Jeffry Franz Stanfield Randal;Business Analytics;M
+Brigida Tabbatha;Environmental studies;F
+Dory Waverley Llewellyn Rosemaria;English Language;F
+Jolynn Leno;Information Systems;M
+Laurena Gordy Radie;Statistics;M
+Jenny Wiskind;Business;F
+Rosana Kape;Quantitative Finance;F
+Bernetta Iago Nielsen;Law;M
+Angelika Web Otis Cathlene;Sociology;F
+Dominica Frick;Economics;M
+Allina Oralla;Chemistry;F
+Caralie Sherlocke Harli;Literature;F
+Lyndell Naldo;Environmental studies;F
+Ashlee Billy Arni;Chem Engineering;F
+Cordelia Ritz;Sociology;M
+Eleanore Derwin Manno;Communications and New Media;F
+Franky Ress;History;F
+Larine Rosco Raye;Psychology;F
+Iolande Biondo;Quantitative Finance;F
+Pauline Dene;Chemistry;M
+Marjory Crisey;Business;F
+Alejandrina Ric Nihi;Geography;F
+Rubetta Udell Obadias Venus;Political Science;F
+Susanna Seaddon;Industrial Design;F
+Kristy Stavros;Political Science;F
+Belva Patten Inerney;Political Science;F
+Dorolice Juliette;Business;F
+Laetitia Luca;Business;F
+Caty Wally Jolenta;Business;M
+Kaela Lindie;Industrial and Systems Engineering;M
+Bernadine Melda;Life Sciences;M
+Dale Bil Chouest;Literature;F
+Brianne Leigh Forrester Benson Tannie Carlisle;Business;F
+Vivian Clim Nathanial Jeth Sax Blackmun;Political Science;M
+Camala Bartolome;Physics;M
+Gerri Hirsch Hazlett Huntley Erl Linn Nette;Business;M
+Adelheid Zinck;Computer Enginering;M
+Moyna Bartholemy Dimitri Dario Annissa;Computer Enginering;M
+Dedra Hebert Bess;Chinese Language;M
+Katharina Hopkins;Economics;M
+Margit Nazarius;Japanese Stuidies;M
+Georgina Larry Hartwell Pascale Neslund;Law;M
+Juliane Bendick Aleen;Math;M
+Coretta Petras;Math;M
+Lesly Kristofer Burgess Ambrosius Ricarda;Pharmacy;M
+Izabel Andrew Carly Kelwin;Law;M
+Aile Infeld;History;F
+Emelda Editha;Civil Engineering;F
+Alysa Haslett Infeld;Business Analytics;M
+Calypso Joseph Braden Schnurr;Business;M
+Laure Cartwell;Law;M
+Steffane Aluino Tabby Courtney Doug Justis Higginson;Psychology;F
+Donnie Wells Cameron Parry Bainter;Economics;M
+Verna Jedd Levin Veradia;Psychology;F
+Carola Bigg;Psychology;F
+Nanice Rebekkah;Chemistry;M
+Twyla Bar Marten Portwin;Computer Science;F
+Tabbi Hotchkiss;Business;M
+Barbara-Anne Berne Gatian;Accounting;M
+Wilmette Waldron;Law;M
+Shelbi Chere;Math;F
+Shandee Pennie Rosalee;Law;M
+Meredith Pinchas Moses Magnum Miun;Electrical Engineering;M
+Rosemonde Horace Russ Curtis Waldner;Law;F
+Danella Seif;English Language;F
+Carmel Ram;Psychology;M
+Kip Neuburger;Chem Engineering;M
+Fay Marcello Constantia;Economics;M
+Nessy Lauritz Nicholas Feodor Kiel Moncear;Life Sciences;F
+Silvie Carroll Reggie Walton Munmro Farlie Lincoln Julia;Law;F
+Vida Yoshi;Life Sciences;F
+Wallie Yurik Helaine;Law;M
+Flossie Kwapong;Industrial and Systems Engineering;M
+Helen Way Berthe;Computer Science;M
+Cybil Goran Ruttger Harwilll Hakeem Justis Broderic Cameron;Business Analytics;M
+Leena Wes Stanley Leigh Zuleika;Electrical Engineering;M
+Windy Kumagai;Business;M
+Siouxie Sebastien;Math;M
+Charis Bernie Sean Zerelda;English Language;F
+Heather Alfons Oswin;Computer Enginering;M
+Katuscha Sommer;Sociology;F
+Ekaterina Gustaf Obellia;Communications and New Media;F
+Calla Alan Nicolas Belanger;Business Analytics;M
+Roslyn Sarena;Political Science;F
+Kanya Gadmann;Pharmacy;M
+Lilias Gahan;Accounting;M
+Nelli Moishe Kleon Ray Alistair Guthrie Hodges;Statistics;F
+Loren Pall Bill;Law;M
+Pearl Lambert Ansell Benji Jules;Industrial and Systems Engineering;M
+Eirena Hagai;Sociology;F
+Lettie Bartholomeus Brandwein;Real Estate;F
+Stefanie Gerda;Law;F
+Darleen Cordie Garaway;English Language;F
+Shelbi Torrey;Global studies;F
+Jacenta Swigart;Mechanical Engineering;M
+Dixie Thomasine;Pharmacy;M
+Alika Nertie;Computer Science;M
+Anet Darill Ches Barrington;Environmental Engineering;M
+Maurita Bud Shannan;Life Sciences;M
+Lotta Luwana;Political Science;M
